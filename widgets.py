@@ -1,8 +1,5 @@
 """
 This module provides functions to render specific plots and widgets.
-
-For the most part, these are wrappers for 
-
 """
 
 from matplotlib.contour import QuadContourSet
@@ -10,10 +7,6 @@ from matplotlib.widgets import Slider
 
 
 def contour(ax, model, args):
-    """
-        Expects:
-        
-    """
     ax.cla()
     obj = QuadContourSet(ax, model.get_param(args["x"]), model.get_param(args["y"]), model.get_param(args["z"]), 100)
 

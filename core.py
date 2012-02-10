@@ -1,3 +1,7 @@
+"""
+This module defines Tengolo's core classes for models, views, logs, and batches
+"""
+
 import matplotlib.pyplot as pyl
 
 class TengoloModel(object):
@@ -6,6 +10,7 @@ class TengoloModel(object):
 
     def get_param(self, param ):
         return self.__dict__[param]
+
 
 class TengoloView(object):
     def __init__(self, model):

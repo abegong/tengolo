@@ -1,7 +1,7 @@
 === Tengolo ===
 Tengolo is a library for agent-based modeling in python, using the matplotlib library.
 
-Tengolo is designed to do scratch the same itch as netlogo, without making users debase themselves with the ridiculously backwards logo programming language.
+Tengolo is designed to scratch the same itch as netlogo, without making users debase themselves with the ridiculously backwards logo programming language.
 
 
 === Advantages ===
