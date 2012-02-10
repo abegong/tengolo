@@ -1,0 +1,53 @@
+=== Tengolo ===
+Tengolo is a library for agent-based modeling in python, using the matplotlib library.
+
+Tengolo is designed to do scratch the same itch as netlogo, without making users debase themselves with the ridiculously backwards logo programming language.
+
+
+=== Advantages ===
+For the most part, the advantages of Tengolo are the advantages of python and matplotlib:
+* Clean, object-oriented code for
+    - Quick learning
+    - Rapid prototyping
+    - Easy debugging
+    - Great maintainability
+* An enormous codebase of snippets and outside libraries.  
+* A fantastic user community
+* Powerful, professional graphs and plots with a minimum of hassle
+
+
+=== Goals ===
+From a design perspective, Tengolo's goal is to allow users to
+1. quickly express their ideas in code,
+2. get immediate feedback from the python shell, matplotlib GUI, and logs,
+and
+3. scale up the scope of their experiments with batches for repeated trials, parameter sweeps, etc.
+
+
+=== Design ===
+Tengolo encourages modelers to follow the MVC application design.  A typical tengolo project will take the form of a single python module, containing:
+    * a model class inherited from tengolo.core.TengoloModel
+    * agent classes, as needed
+    * an initialization script that
+        1. Instantiates the model
+        2. Instantiates the view and/or logs and/or batcher
+        3. Attaches controls and observers
+        4. Either (a) renders the view, or (b) launches the batcher
+
+That's it!  You can write high-powered models in as few as a few dozen lines of code.
+
+The magic is in the interface between Tengolo's models, views, and logs. TengoloModel creates a set of generic getters and setters that expose any attribute of the model to the views/logs.  Widgets allow you to attach controls (to change) and observers (to passively observe) any model parameter or state variable that you like.  For the most part, widgets are wrapper functions for subplots, axes, and artists defined in matplotlib.  The upshot is that you get tools to interact with any aspect of your model's behavior, with a minimum of time spent on configuration.
+
+Tengolo takes care of all of this in the background, so that you get to focus on building and analyzing your model.
+
+=== Development plan ===
+Tengolo is in pre-alpha development.
+
+Down the road, the library will need:
+    * more GUI widgets (wrappers for matplotlib functions, essentially)
+    * more examples of working models
+    * support for logging and batching of jobs
+
+
+
+

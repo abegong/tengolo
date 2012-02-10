@@ -21,7 +21,7 @@ class TengoloView(object):
     def update(self):
         self.model.update()
         for (i, obj) in enumerate(self.observers):
-            obj['render_function'](obj["ax"], obj["args"], self.model)
+            obj['render_function'](obj["ax"], self.model, obj["args"])
         pyl.draw()
 
     def render(self):
@@ -39,6 +39,15 @@ class TengoloView(object):
 
     def add_control(self, render_function, param, location, args ):
         ax  = pyl.axes(location)
-        self.controls.append( render_function(ax, param, args, self) )
+        self.controls.append( render_function(ax, self, param, args) )
         self.ax_count += 1
+
+
+class TengoloLog(object):
+    pass
+
+
+class TengoloBatch(object):
+    pass
+
 
