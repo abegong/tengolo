@@ -2,6 +2,7 @@
 This module defines Tengolo's core classes for models, views, logs, and batches
 """
 
+import time
 import matplotlib.pyplot as pyl
 
 class TengoloModel(object):
